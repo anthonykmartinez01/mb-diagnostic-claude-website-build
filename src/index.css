@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-heading: 'Manrope', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    /* Brand Colors (HSL) */
+    --deep-blue: 207 73% 22%;
+    --clinical-blue: 207 69% 39%;
+    --diagnostic-teal: 186 67% 47%;
+    --soft-cyan: 185 56% 67%;
+
+    /* Semantic Tokens */
+    --background: 0 0% 100%;
+    --foreground: 220 26% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 26% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 26% 17%;
+
+    --primary: 207 73% 22%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 207 69% 39%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 195 30% 95%;
+    --muted-foreground: 220 10% 40%;
+
+    --accent: 186 67% 47%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 207 69% 39%;
+
+    --radius: 0.5rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(207 73% 22%), hsl(207 69% 39%), hsl(186 67% 47%));
+    --gradient-hero: linear-gradient(160deg, hsl(207 73% 22%) 0%, hsl(207 69% 39%) 50%, hsl(186 67% 47%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(207 69% 39%), hsl(186 67% 47%));
+    --gradient-subtle: linear-gradient(180deg, hsl(185 56% 67% / 0.1), transparent);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px hsl(207 73% 22% / 0.08);
+    --shadow-md: 0 4px 12px hsl(207 73% 22% / 0.12);
+    --shadow-lg: 0 8px 30px hsl(207 73% 22% / 0.15);
+    --shadow-cta: 0 4px 20px hsl(186 67% 47% / 0.3);
+
+    /* Header */
+    --header-height: 120px;
+    --header-height-scrolled: 70px;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height-scrolled);
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-cta {
+    background: var(--gradient-cta);
+  }
+
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  .gradient-divider {
+    height: 3px;
+    background: var(--gradient-primary);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-padding {
+    @apply px-4 py-16 md:px-8 md:py-24 lg:py-28;
+  }
+
+  .container-site {
+    @apply mx-auto max-w-7xl px-4 md:px-8;
+  }
+}
