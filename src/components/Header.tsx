@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Phone, Menu, X } from "lucide-react";
 import { SITE, NAV_ITEMS } from "@/lib/siteData";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 
 const sectionIds = NAV_ITEMS.map((n) => n.href.replace("#", ""));
 

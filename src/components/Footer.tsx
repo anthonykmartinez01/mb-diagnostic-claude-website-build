@@ -1,6 +1,6 @@
 import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
 import { SITE, NAV_ITEMS, SERVICE_AREAS } from "@/lib/siteData";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 
 export default function Footer() {
   return (
