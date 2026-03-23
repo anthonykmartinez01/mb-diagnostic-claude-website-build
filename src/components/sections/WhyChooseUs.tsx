@@ -1,5 +1,7 @@
 import { MapPin, Shield, Heart, Clock, Phone } from "lucide-react";
 import { SITE, WHY_CHOOSE_US } from "@/lib/siteData";
+import AnimateIn from "@/components/ui/AnimateIn";
+import StaggerChildren from "@/components/ui/StaggerChildren";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   MapPin, Shield, Heart, Clock,
@@ -9,14 +11,16 @@ export default function WhyChooseUs() {
   return (
     <section id="why-us" className="section-padding">
       <div className="container-site">
-        <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
-          Why Dallas Families Choose MB Diagnostic Labs
-        </h2>
-        <p className="mt-3 max-w-2xl text-muted-foreground">
-          We're not a big corporate lab. We're your neighbor. Here's what sets MB Diagnostic Labs apart from every other testing provider in the DFW metroplex.
-        </p>
+        <AnimateIn>
+          <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
+            Why Dallas Families Choose MB Diagnostic Labs
+          </h2>
+          <p className="mt-3 max-w-2xl text-muted-foreground">
+            We're not a big corporate lab. We're your neighbor. Here's what sets MB Diagnostic Labs apart from every other testing provider in the DFW metroplex.
+          </p>
+        </AnimateIn>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2">
+        <StaggerChildren className="mt-12 grid gap-8 sm:grid-cols-2">
           {WHY_CHOOSE_US.map((item) => {
             const Icon = iconMap[item.icon] || Shield;
             return (
@@ -36,9 +40,9 @@ export default function WhyChooseUs() {
               </div>
             );
           })}
-        </div>
+        </StaggerChildren>
 
-        <div className="mt-10 text-center">
+        <AnimateIn variant="fadeUp" delay={0.2} className="mt-10 text-center">
           <a
             href="#contact"
             className="inline-flex items-center gap-2 rounded-lg gradient-cta px-8 py-4 text-base font-bold text-primary-foreground shadow-md transition-transform hover:scale-105"
@@ -47,7 +51,7 @@ export default function WhyChooseUs() {
             <Phone className="h-5 w-5" />
             Schedule Your Test
           </a>
-        </div>
+        </AnimateIn>
       </div>
     </section>
   );

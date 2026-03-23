@@ -1,5 +1,6 @@
 import { Phone } from "lucide-react";
 import { SITE, FAQ_DATA } from "@/lib/siteData";
+import AnimateIn from "@/components/ui/AnimateIn";
 import {
   Accordion,
   AccordionContent,
@@ -11,13 +12,16 @@ export default function FAQSection() {
   return (
     <section id="faq" className="section-padding">
       <div className="container-site max-w-3xl">
-        <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
-          Common Questions About DNA Testing
-        </h2>
-        <p className="mt-3 text-muted-foreground">
-          Get answers to the most frequently asked questions about our mobile DNA testing services.
-        </p>
+        <AnimateIn>
+          <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
+            Common Questions About DNA Testing
+          </h2>
+          <p className="mt-3 text-muted-foreground">
+            Get answers to the most frequently asked questions about our mobile DNA testing services.
+          </p>
+        </AnimateIn>
 
+        <AnimateIn variant="fadeUp" delay={0.15}>
         <Accordion type="single" collapsible className="mt-10">
           {FAQ_DATA.map((faq, i) => (
             <AccordionItem key={i} value={`faq-${i}`}>
@@ -30,8 +34,9 @@ export default function FAQSection() {
             </AccordionItem>
           ))}
         </Accordion>
+        </AnimateIn>
 
-        <div className="mt-10 text-center">
+        <AnimateIn variant="fadeUp" delay={0.2} className="mt-10 text-center">
           <p className="text-sm text-muted-foreground">Have more questions?</p>
           <a
             href={SITE.phoneTel}
@@ -41,7 +46,7 @@ export default function FAQSection() {
             <Phone className="h-4 w-4" />
             Call Us at {SITE.phone}
           </a>
-        </div>
+        </AnimateIn>
       </div>
     </section>
   );

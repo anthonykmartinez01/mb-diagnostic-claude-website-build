@@ -1,5 +1,7 @@
 import { Phone, CalendarCheck, MapPin, FileCheck } from "lucide-react";
 import { SITE } from "@/lib/siteData";
+import AnimateIn from "@/components/ui/AnimateIn";
+import StaggerChildren from "@/components/ui/StaggerChildren";
 
 const steps = [
   {
@@ -32,14 +34,16 @@ export default function HowItWorks() {
   return (
     <section id="how-it-works" className="section-padding" style={{ background: "linear-gradient(180deg, hsl(185 56% 67% / 0.08), hsl(185 56% 67% / 0.03))" }}>
       <div className="container-site">
-        <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
-          How Mobile DNA Testing Works
-        </h2>
-        <p className="mt-3 max-w-2xl text-muted-foreground">
-          Getting a DNA test has never been easier. Here's exactly what to expect when you choose MB Diagnostic Labs.
-        </p>
+        <AnimateIn>
+          <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
+            How Mobile DNA Testing Works
+          </h2>
+          <p className="mt-3 max-w-2xl text-muted-foreground">
+            Getting a DNA test has never been easier. Here's exactly what to expect when you choose MB Diagnostic Labs.
+          </p>
+        </AnimateIn>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <StaggerChildren className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4" staggerDelay={0.15}>
           {steps.map((step) => (
             <div key={step.number} className="relative text-center">
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl gradient-primary shadow-md">
@@ -49,9 +53,9 @@ export default function HowItWorks() {
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.description}</p>
             </div>
           ))}
-        </div>
+        </StaggerChildren>
 
-        <div className="mt-12 text-center">
+        <AnimateIn variant="fadeUp" delay={0.2} className="mt-12 text-center">
           <a
             href={SITE.phoneTel}
             className="inline-flex items-center gap-2 rounded-lg gradient-cta px-8 py-4 text-base font-bold text-primary-foreground shadow-md transition-transform hover:scale-105"
@@ -60,7 +64,7 @@ export default function HowItWorks() {
             <Phone className="h-5 w-5" />
             Ready to Get Started? Call {SITE.phone}
           </a>
-        </div>
+        </AnimateIn>
       </div>
     </section>
   );

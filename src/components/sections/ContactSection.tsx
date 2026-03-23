@@ -1,20 +1,23 @@
 import { Phone, Mail, MapPin, CalendarCheck } from "lucide-react";
 import { SITE, BOOKING_URL } from "@/lib/siteData";
+import AnimateIn from "@/components/ui/AnimateIn";
 
 export default function ContactSection() {
   return (
     <section id="contact" className="section-padding gradient-hero">
       <div className="container-site">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-center font-heading text-2xl font-bold text-primary-foreground sm:text-3xl md:text-4xl">
-            Schedule Your Mobile DNA Test
-          </h2>
-          <p className="mx-auto mt-3 max-w-lg text-center text-sm text-primary-foreground/90 sm:mt-4 sm:text-base">
-            Ready to get answers? Select a service below to book your appointment, or call us directly. Tricia will come to you anywhere in the DFW metroplex.
-          </p>
+          <AnimateIn>
+            <h2 className="text-center font-heading text-2xl font-bold text-primary-foreground sm:text-3xl md:text-4xl">
+              Schedule Your Mobile DNA Test
+            </h2>
+            <p className="mx-auto mt-3 max-w-lg text-center text-sm text-primary-foreground/90 sm:mt-4 sm:text-base">
+              Ready to get answers? Select a service below to book your appointment, or call us directly. Tricia will come to you anywhere in the DFW metroplex.
+            </p>
+          </AnimateIn>
 
           <div className="mt-8 grid gap-6 sm:mt-10 sm:gap-10 lg:grid-cols-5">
-            <div className="space-y-3 sm:space-y-6 lg:col-span-2">
+            <AnimateIn className="space-y-3 sm:space-y-6 lg:col-span-2">
               <a
                 href={SITE.phoneTel}
                 className="flex items-center gap-3 rounded-xl bg-primary-foreground/10 p-4 transition-colors hover:bg-primary-foreground/20 sm:gap-4 sm:p-5"
@@ -50,9 +53,9 @@ export default function ContactSection() {
                   Don't wait another day wondering. Call now for a free, confidential consultation.
                 </p>
               </div>
-            </div>
+            </AnimateIn>
 
-            <div className="flex flex-col items-center justify-center lg:col-span-3">
+            <AnimateIn variant="fadeUp" delay={0.15} className="flex flex-col items-center justify-center lg:col-span-3">
               <div className="w-full rounded-2xl bg-primary-foreground p-6 text-center shadow-lg sm:p-10">
                 <CalendarCheck className="mx-auto h-12 w-12 text-secondary sm:h-16 sm:w-16" />
                 <h3 className="mt-4 font-heading text-xl font-bold text-foreground sm:text-2xl">
@@ -75,7 +78,7 @@ export default function ContactSection() {
                   You'll select your test, then pick an available appointment time.
                 </p>
               </div>
-            </div>
+            </AnimateIn>
           </div>
         </div>
       </div>

@@ -1,19 +1,22 @@
 import { Phone } from "lucide-react";
 import { SITE, PRICING_TABLE, PRICING_ADDONS } from "@/lib/siteData";
+import AnimateIn from "@/components/ui/AnimateIn";
 
 export default function PricingSection() {
   return (
     <section id="pricing" className="section-padding">
       <div className="container-site">
-        <h2 className="font-heading text-2xl font-bold text-foreground sm:text-3xl md:text-4xl">
-          Transparent Pricing
-        </h2>
-        <p className="mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
-          We believe in upfront pricing. Here's what to expect — no hidden fees.
-        </p>
+        <AnimateIn>
+          <h2 className="font-heading text-2xl font-bold text-foreground sm:text-3xl md:text-4xl">
+            Transparent Pricing
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
+            We believe in upfront pricing. Here's what to expect — no hidden fees.
+          </p>
+        </AnimateIn>
 
         {/* Desktop table */}
-        <div className="mt-8 hidden sm:block overflow-x-auto rounded-xl border border-border">
+        <AnimateIn variant="fadeUp" delay={0.15} className="mt-8 hidden sm:block overflow-x-auto rounded-xl border border-border">
           <table className="w-full text-left text-sm">
             <thead>
               <tr className="bg-muted/50">
@@ -35,10 +38,10 @@ export default function PricingSection() {
               ))}
             </tbody>
           </table>
-        </div>
+        </AnimateIn>
 
         {/* Mobile stacked cards */}
-        <div className="mt-8 space-y-2.5 sm:hidden">
+        <AnimateIn variant="fadeUp" delay={0.15} className="mt-8 space-y-2.5 sm:hidden">
           {PRICING_TABLE.map((row, i) => (
             <div
               key={row.test}
@@ -57,10 +60,10 @@ export default function PricingSection() {
               </div>
             </div>
           ))}
-        </div>
+        </AnimateIn>
 
         {/* Add-ons */}
-        <div className="mt-8 rounded-xl border border-border bg-card p-4 sm:p-8">
+        <AnimateIn variant="fadeUp" delay={0.2} className="mt-8 rounded-xl border border-border bg-card p-4 sm:p-8">
           <h3 className="font-heading text-base font-bold text-foreground sm:text-lg">Additional Options</h3>
           <div className="mt-3 space-y-2.5 sm:mt-4 sm:space-y-3">
             {PRICING_ADDONS.map((addon) => (
@@ -77,7 +80,7 @@ export default function PricingSection() {
               All results are delivered via email to the address provided at the time of booking.
             </p>
           </div>
-        </div>
+        </AnimateIn>
 
         {/* Prenatal footnote */}
         <p className="mt-4 text-xs text-muted-foreground italic sm:text-sm">

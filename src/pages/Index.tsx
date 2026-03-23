@@ -14,6 +14,7 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactSection from "@/components/sections/ContactSection";
 import FinalCTAStrip from "@/components/sections/FinalCTAStrip";
+import AnimateIn from "@/components/ui/AnimateIn";
 import { BUSINESS_SCHEMA, SERVICES_SCHEMA, FAQ_SCHEMA } from "@/lib/schema";
 
 const Index = () => {
@@ -28,7 +29,9 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <TrustSignals />
+        <AnimateIn variant="fadeIn" duration={0.6}>
+          <TrustSignals />
+        </AnimateIn>
         <WhyChooseUs />
         <div className="gradient-divider" />
         <ServicesSection />
@@ -45,7 +48,9 @@ const Index = () => {
         {/* <div className="gradient-divider" /> */}
         <FAQSection />
         <ContactSection />
-        <FinalCTAStrip />
+        <AnimateIn variant="fadeIn" duration={0.6}>
+          <FinalCTAStrip />
+        </AnimateIn>
       </main>
       <Footer />
       <FloatingCTA />

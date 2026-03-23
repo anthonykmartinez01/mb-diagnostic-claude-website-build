@@ -1,29 +1,35 @@
 import { Phone, ChevronRight, AlertTriangle } from "lucide-react";
 import { SITE, SERVICE_CATEGORIES, BOOKING_URL } from "@/lib/siteData";
+import AnimateIn from "@/components/ui/AnimateIn";
+import StaggerChildren from "@/components/ui/StaggerChildren";
 
 export default function ServicesSection() {
   return (
     <section id="services" className="section-padding">
       <div className="container-site">
-        <h2 className="font-heading text-2xl font-bold text-foreground sm:text-3xl md:text-4xl">
-          Mobile DNA Testing Services in Dallas, TX
-        </h2>
-        <p className="mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
-          From paternity and family relationship testing to immigration and specialty DNA services, we bring professional, AABB accredited testing directly to you. 13 tests available.
-        </p>
+        <AnimateIn>
+          <h2 className="font-heading text-2xl font-bold text-foreground sm:text-3xl md:text-4xl">
+            Mobile DNA Testing Services in Dallas, TX
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
+            From paternity and family relationship testing to immigration and specialty DNA services, we bring professional, AABB accredited testing directly to you. 13 tests available.
+          </p>
+        </AnimateIn>
 
         <div className="mt-10 space-y-12 sm:mt-12 sm:space-y-16">
           {SERVICE_CATEGORIES.map((category) => (
             <div key={category.id} id={category.id}>
-              <h3 className="font-heading text-lg font-bold text-foreground sm:text-xl md:text-2xl">
-                {category.name}
-              </h3>
-              <p className="mt-1.5 max-w-2xl text-xs text-muted-foreground sm:mt-2 sm:text-sm">
-                {category.description}
-              </p>
-              <div className="gradient-divider mt-3 w-16 rounded-full" />
+              <AnimateIn>
+                <h3 className="font-heading text-lg font-bold text-foreground sm:text-xl md:text-2xl">
+                  {category.name}
+                </h3>
+                <p className="mt-1.5 max-w-2xl text-xs text-muted-foreground sm:mt-2 sm:text-sm">
+                  {category.description}
+                </p>
+                <div className="gradient-divider mt-3 w-16 rounded-full" />
+              </AnimateIn>
 
-              <div className="mt-5 grid gap-4 sm:mt-6 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <StaggerChildren className="mt-5 grid gap-4 sm:mt-6 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3" staggerDelay={0.1}>
                 {category.services.map((service) => {
                   const serviceUrl = "bookingUrl" in service ? (service as any).bookingUrl : BOOKING_URL;
                   return (
@@ -86,9 +92,9 @@ export default function ServicesSection() {
                     </div>
                   );
                 })}
-              </div>
+              </StaggerChildren>
 
-              <div className="mt-4 sm:mt-6">
+              <AnimateIn variant="fadeUp" delay={0.1} className="mt-4 sm:mt-6">
                 <a
                   href={BOOKING_URL}
                   target="_blank"
@@ -99,12 +105,12 @@ export default function ServicesSection() {
                   <Phone className="h-4 w-4" />
                   Schedule {category.name}
                 </a>
-              </div>
+              </AnimateIn>
             </div>
           ))}
         </div>
 
-        <div className="mt-12 rounded-xl border border-border bg-muted/30 p-6 text-center sm:mt-16 sm:p-8">
+        <AnimateIn variant="fadeUp" className="mt-12 rounded-xl border border-border bg-muted/30 p-6 text-center sm:mt-16 sm:p-8">
           <p className="font-heading text-base font-bold text-foreground sm:text-lg">
             Not Sure Which Test You Need?
           </p>
@@ -119,7 +125,7 @@ export default function ServicesSection() {
             <Phone className="h-4 w-4" />
             Call Us, We'll Help
           </a>
-        </div>
+        </AnimateIn>
       </div>
     </section>
   );
