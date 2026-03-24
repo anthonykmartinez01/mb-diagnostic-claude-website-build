@@ -41,36 +41,38 @@ export default function ServicesSection() {
                       <h4 className="font-heading text-base font-semibold text-foreground sm:text-lg">
                         {service.name}
                       </h4>
-                      <p className="mt-1.5 flex-1 text-xs leading-relaxed text-muted-foreground sm:mt-2 sm:text-sm">
-                        {service.description}
-                      </p>
+                      <div className="mt-1.5 flex-1 sm:mt-2">
+                        <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                          {service.description}
+                        </p>
 
-                      {"isPrenatal" in service && service.isPrenatal && "prenatalSteps" in service && (
-                        <div className="mt-3 space-y-2 sm:mt-4">
-                          <p className="text-xs font-bold text-foreground sm:text-sm">How It Works:</p>
-                          <ol className="space-y-1.5">
-                            {(service as any).prenatalSteps.map((s: any) => (
-                              <li key={s.step} className="flex items-start gap-2 text-xs sm:text-sm">
-                                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-secondary text-[10px] font-bold text-secondary-foreground">
-                                  {s.step}
-                                </span>
-                                <span className="text-muted-foreground">
-                                  <strong className="text-foreground">{s.title}</strong> — {s.desc}
-                                </span>
-                              </li>
-                            ))}
-                          </ol>
-                        </div>
-                      )}
+                        {"isPrenatal" in service && service.isPrenatal && "prenatalSteps" in service && (
+                          <div className="mt-3 space-y-2 sm:mt-4">
+                            <p className="text-xs font-bold text-foreground sm:text-sm">How It Works:</p>
+                            <ol className="space-y-1.5">
+                              {(service as any).prenatalSteps.map((s: any) => (
+                                <li key={s.step} className="flex items-start gap-2 text-xs sm:text-sm">
+                                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-secondary text-[10px] font-bold text-secondary-foreground">
+                                    {s.step}
+                                  </span>
+                                  <span className="text-muted-foreground">
+                                    <strong className="text-foreground">{s.title}</strong> — {s.desc}
+                                  </span>
+                                </li>
+                              ))}
+                            </ol>
+                          </div>
+                        )}
 
-                      {"isPrenatal" in service && service.isPrenatal && "prenatalNotice" in service && (
-                        <div className="mt-3 flex items-start gap-2 rounded-lg border border-accent bg-accent/10 p-3 sm:mt-4">
-                          <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                          <p className="text-[11px] font-semibold leading-relaxed text-foreground sm:text-xs">
-                            {(service as any).prenatalNotice}
-                          </p>
-                        </div>
-                      )}
+                        {"isPrenatal" in service && service.isPrenatal && "prenatalNotice" in service && (
+                          <div className="mt-3 flex items-start gap-2 rounded-lg border border-accent bg-accent/10 p-3 sm:mt-4">
+                            <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                            <p className="text-[11px] font-semibold leading-relaxed text-foreground sm:text-xs">
+                              {(service as any).prenatalNotice}
+                            </p>
+                          </div>
+                        )}
+                      </div>
 
                       <p className="mt-2.5 text-sm font-bold text-secondary sm:mt-3">
                         {service.price}

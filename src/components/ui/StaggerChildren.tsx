@@ -55,7 +55,7 @@ export default function StaggerChildren({
       className={className}
     >
       {React.Children.map(children, (child) => (
-        <motion.div variants={childVariants}>{child}</motion.div>
+        <motion.div variants={childVariants} className="flex">{child}</motion.div>
       ))}
     </motion.div>
   );
