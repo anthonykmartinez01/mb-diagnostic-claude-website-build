@@ -112,6 +112,10 @@ export default function ServicesSection() {
           ))}
         </div>
 
+        <p className="mt-6 text-xs text-muted-foreground italic sm:text-sm">
+          Prices are subject to change. Please call to confirm current pricing.
+        </p>
+
         <AnimateIn variant="fadeUp" className="mt-12 rounded-xl border border-border bg-muted/30 p-6 text-center sm:mt-16 sm:p-8">
           <p className="font-heading text-base font-bold text-foreground sm:text-lg">
             Not Sure Which Test You Need?

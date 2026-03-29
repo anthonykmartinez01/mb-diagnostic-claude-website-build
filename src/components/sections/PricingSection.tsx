@@ -86,6 +86,9 @@ export default function PricingSection() {
         <p className="mt-4 text-xs text-muted-foreground italic sm:text-sm">
           * Prenatal test requires OBGYN collection. Additional alleged father +$200.
         </p>
+        <p className="mt-1 text-xs text-muted-foreground italic sm:text-sm">
+          Prices are subject to change. Please call to confirm current pricing.
+        </p>
 
         {/* CTA */}
         <div className="mt-8 text-center sm:mt-10">
