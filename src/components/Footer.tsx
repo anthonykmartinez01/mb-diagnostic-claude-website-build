@@ -54,7 +54,14 @@ export default function Footer() {
 
         {/* Social + Copyright */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-primary-foreground/20 pt-8 sm:flex-row">
-          <p className="text-sm opacity-70">© 2025 MB Diagnostic Labs | All Rights Reserved</p>
+          <div className="text-center sm:text-left">
+            <p className="text-sm opacity-70">© 2025 MB Diagnostic Labs | All Rights Reserved</p>
+            <div className="mt-2 flex items-center justify-center gap-3 text-xs opacity-60 sm:justify-start">
+              <a href="/privacy" className="hover:text-soft-cyan transition-colors">Privacy Policy</a>
+              <span>|</span>
+              <a href="/terms" className="hover:text-soft-cyan transition-colors">Terms of Service</a>
+            </div>
+          </div>
           <div className="flex items-center gap-4">
             <a href={SITE.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-soft-cyan" aria-label="Facebook">
               <Facebook className="h-5 w-5" />
