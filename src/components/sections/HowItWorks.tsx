@@ -8,7 +8,7 @@ const steps = [
     icon: Phone,
     number: "1",
     title: "Call or Schedule Online",
-    description: "Reach out by phone at (972) 268-2359 or use our contact form. Tell us which test you need and your preferred meeting location.",
+    description: "Reach out by phone at (945) 345-5767 or use our contact form. Tell us which test you need and your preferred meeting location.",
   },
   {
     icon: CalendarCheck,

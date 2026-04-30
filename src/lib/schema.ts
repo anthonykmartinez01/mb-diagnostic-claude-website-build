@@ -7,7 +7,7 @@ export const BUSINESS_SCHEMA = {
   "name": SITE.name,
   "description": "Mobile DNA testing services in Dallas, TX and the DFW Metroplex. Court-admissible and peace-of-mind DNA testing at your location.",
   "url": SITE.url,
-  "telephone": "+19722682359",
+  "telephone": "+19453455767",
   "email": SITE.email,
   "address": {
     "@type": "PostalAddress",

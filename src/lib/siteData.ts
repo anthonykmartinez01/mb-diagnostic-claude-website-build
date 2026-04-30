@@ -3,8 +3,8 @@ export const BOOKING_URL = "https://book.mbdiagnostic.com/booking/mb-diagnostic-
 export const SITE = {
   name: "MB Diagnostic Labs",
   legalName: "MB Diagnostic Labs",
-  phone: "(972) 268-2359",
-  phoneTel: "tel:+19722682359",
+  phone: "(945) 345-5767",
+  phoneTel: "tel:+19453455767",
   email: "tricia_brown23@yahoo.com",
   address: "1910 Pacific Ave Suite 2000 PMB2181, Dallas, TX",
   facebook: "https://www.facebook.com/profile.php?id=61563847662877",
@@ -218,7 +218,7 @@ export const FAQ_DATA = [
   },
   {
     question: "How much does a paternity test cost?",
-    answer: "Peace of mind paternity tests start at $129 and court admissible paternity tests start at $229. We offer 13 different DNA testing services with transparent, upfront pricing. Call us at (972) 268-2359 for a free, confidential quote. No hidden fees, ever.",
+    answer: "Peace of mind paternity tests start at $129 and court admissible paternity tests start at $229. We offer 13 different DNA testing services with transparent, upfront pricing. Call us at (945) 345-5767 for a free, confidential quote. No hidden fees, ever.",
   },
   {
     question: "Are your DNA test results legally admissible in court?",

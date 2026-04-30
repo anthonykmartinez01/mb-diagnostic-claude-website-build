@@ -22,7 +22,7 @@ const Index = () => {
     <>
       <SEOHead
         title="Mobile DNA Testing Dallas TX | Paternity, Legal & Immigration DNA Tests | MB Diagnostic Labs"
-        description="Mobile DNA testing in Dallas & the DFW Metroplex. Paternity tests, legal DNA, immigration DNA, and more. We come to you anywhere in DFW. Call (972) 268-2359 to schedule."
+        description="Mobile DNA testing in Dallas & the DFW Metroplex. Paternity tests, legal DNA, immigration DNA, and more. We come to you anywhere in DFW. Call (945) 345-5767 to schedule."
         canonical="https://mbdiagnostic.com/"
         schemaJson={[BUSINESS_SCHEMA, ...SERVICES_SCHEMA, FAQ_SCHEMA] as any}
       />
